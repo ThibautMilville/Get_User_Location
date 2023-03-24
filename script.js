@@ -7,6 +7,7 @@ button.addEventListener('click', () => {
         // Getting location of passed coordinates using geocoding API
         const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
         fetch(url).then(res => res.json()).then(data => {
+            // Display the informations in the console
             console.table(data.address)
         }).catch(() => {
             console.log("Error fetching data from API")
